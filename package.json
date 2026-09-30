@@ -1,0 +1,27 @@
+{
+  "name": "@runmu.sh/ext-kit",
+  "version": "1.0.0",
+  "description": "The world-module runtime shared by the first-party μClient extensions (Tickets, Assist, Puppets): per-world enabled/source settings, staff role, Core.Supports, configurable actions, read marks, a payload validator, DOM helpers and the module panel styles. Bundled into each extension.",
+  "type": "module",
+  "license": "MIT",
+  "homepage": "https://github.com/runmu-sh/ext-kit",
+  "repository": { "type": "git", "url": "git+https://github.com/runmu-sh/ext-kit.git" },
+  "keywords": ["muclient", "runmu", "extension", "gmcp"],
+  "exports": {
+    "./css": { "types": "./dist/css.d.ts", "default": "./dist/css.js" },
+    "./dom": { "types": "./dist/dom.d.ts", "default": "./dist/dom.js" },
+    "./module": { "types": "./dist/module.d.ts", "default": "./dist/module.js" },
+    "./schema": { "types": "./dist/schema.d.ts", "default": "./dist/schema.js" }
+  },
+  "files": ["dist", "src", "README.md"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepack": "npm run build"
+  },
+  "peerDependencies": { "@muclient/sdk": "*" },
+  "devDependencies": {
+    "@muclient/sdk": "npm:@runmu.sh/sdk@^1.6.0",
+    "typescript": "^5.9.0"
+  },
+  "publishConfig": { "access": "public" }
+}
